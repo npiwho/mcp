@@ -2,11 +2,17 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
   "name": "io.github.npiwho/npiwho",
   "title": "NPI Who",
-  "description": "US health care providers by NPI, name or phone: NPPES registry, Open Payments, Medicare billing, OIG exclusions, facility enrollments, HRSA health centers. Free, no key. Every result carries the public page URL.",
+  "description": "US health care providers by NPI, name or phone, with payments, Medicare, OIG and facility data.",
   "websiteUrl": "https://npiwho.com/developers/mcp",
-  "repository": { "url": "https://github.com/npiwho/mcp", "source": "github" },
+  "repository": {
+    "url": "https://github.com/npiwho/mcp",
+    "source": "github"
+  },
   "version": "1.0.0",
   "remotes": [
-    { "type": "streamable-http", "url": "https://npiwho.com/mcp" }
+    {
+      "type": "streamable-http",
+      "url": "https://npiwho.com/mcp"
+    }
   ]
 }
