@@ -6,19 +6,27 @@ Every result that names a provider or facility starts with the public page's URL
 
 ## Connect
 
-Claude Code:
+Nothing to install from this repository. Each client keeps its own list of MCP servers: add the endpoint once in the client you use, then start a **new** conversation (it does not appear in one that is already open). No account, nothing to sign in to.
+
+**Claude Code** (terminal), once, in any directory:
 
 ```
-claude mcp add --transport http npiwho https://npiwho.com/mcp
+claude mcp add --transport http -s user npiwho https://npiwho.com/mcp
 ```
 
-Codex:
+`-s user` makes it available in every project; leave it out for the current project only. `claude mcp list` should show `npiwho` as connected. Remove with `claude mcp remove -s user npiwho`.
+
+**Claude.ai** (web and desktop): Settings → Connectors → Add custom connector. Name: NPI Who. URL: `https://npiwho.com/mcp`. Authentication: none. Save, then turn it on in a chat's tools menu.
+
+**ChatGPT**: Settings → Connectors → Create (developer mode must be on). URL as above, No authentication, save, then enable it for a chat.
+
+**Codex** (terminal):
 
 ```
 codex mcp add npiwho --url https://npiwho.com/mcp
 ```
 
-Cursor, Windsurf and other clients with a JSON config:
+**Cursor, Windsurf, VS Code** and other clients with a JSON config (`mcp.json` in this repository):
 
 ```json
 {
@@ -28,7 +36,7 @@ Cursor, Windsurf and other clients with a JSON config:
 }
 ```
 
-Claude.ai and ChatGPT: add a custom connector with the URL above and no authentication.
+Then ask in plain language: "What do the public records say about NPI 1366487498?", "Who is at (210) 489-7220?", "Which hospices in Austin, Texas are non-profit?" The assistant picks the tool.
 
 ## Tools
 
