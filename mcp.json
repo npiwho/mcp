@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "npiwho": { "type": "http", "url": "https://npiwho.com/mcp" }
+  }
+}
