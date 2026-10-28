@@ -6,27 +6,19 @@ Every result that names a provider or facility starts with the public page's URL
 
 ## Connect
 
-Nothing to install from this repository. Each client keeps its own list of MCP servers: add the endpoint once in the client you use, then start a **new** conversation (it does not appear in one that is already open). No account, nothing to sign in to.
-
-**Claude Code** (terminal), once, in any directory:
+Claude Code:
 
 ```
-claude mcp add --transport http -s user npiwho https://npiwho.com/mcp
+claude mcp add --transport http npiwho https://npiwho.com/mcp
 ```
 
-`-s user` makes it available in every project; leave it out for the current project only. `claude mcp list` should show `npiwho` as connected. Remove with `claude mcp remove -s user npiwho`.
-
-**Claude.ai** (web and desktop): Settings → Connectors → Add custom connector. Name: NPI Who. URL: `https://npiwho.com/mcp`. Authentication: none. Save, then turn it on in a chat's tools menu.
-
-**ChatGPT**: Settings → Connectors → Create (developer mode must be on). URL as above, No authentication, save, then enable it for a chat.
-
-**Codex** (terminal):
+Codex:
 
 ```
 codex mcp add npiwho --url https://npiwho.com/mcp
 ```
 
-**Cursor, Windsurf, VS Code** and other clients with a JSON config (`mcp.json` in this repository):
+Cursor, Windsurf and other clients with a JSON config:
 
 ```json
 {
@@ -36,7 +28,9 @@ codex mcp add npiwho --url https://npiwho.com/mcp
 }
 ```
 
-Then ask in plain language: "What do the public records say about NPI 1366487498?", "Who is at (210) 489-7220?", "Which hospices in Austin, Texas are non-profit?" The assistant picks the tool.
+Claude.ai and ChatGPT: add a custom connector with the URL above and no authentication.
+
+A walkthrough with a real response, for Claude, ChatGPT and Cursor: [Give your AI assistant a lookup of every US doctor's NPI, payments and exclusion status](https://dev.to/npiwho/give-your-ai-assistant-a-lookup-of-every-us-doctors-npi-payments-and-exclusion-status-free-mcp-2mma) (dev.to). The per-provider payment totals behind the tools are an open dataset: [npiwho/us-provider-payments](https://github.com/npiwho/us-provider-payments).
 
 ## Tools
 
